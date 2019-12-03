@@ -2,7 +2,7 @@
 
 - Data was obtained from Google Books API.
 
-- Angualar 7 was used.
+- Angualar 8 was used.
 
 - Responsive for smaller devices. (flexbox, viewport, etc...)
 
