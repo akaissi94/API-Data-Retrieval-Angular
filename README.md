@@ -2,7 +2,7 @@
 
 - Data was obtained from Google Books API.
 
-- Angular 8 was used.
+- Angular 8 was used..
 
 - Responsive for smaller devices. (flexbox, viewport, etc...)
 
