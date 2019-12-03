@@ -1,0 +1,17 @@
+<div>
+  <input
+    #searchInput
+    placeholder="Please Enter Your Query Term(s) Here"
+    class="Search-searchbar"
+    (keydown)="onKeydownInput($event)"
+    (input)="onChangeInput($event)"
+  />
+  <button *ngIf="loading" class="Search-searchbutton Search-no_events">
+    Loading...
+  </button>
+  <button *ngIf="!loading" class="Search-searchbutton" (click)="search()">
+    Search
+  </button>
+  <div *ngIf="error" class="Search-error">Error: {{ error }}</div>
+  <app-results #resultsComponent [entries]="results"></app-results>
+</div>

@@ -1,0 +1,77 @@
+<div class="Results-main">
+  <div *ngIf="entries && entries.length > 0">
+    <div *ngFor="let entry of entries" attr.id="{{ entry.id }}">
+      <div class="Results-results" (click)="clickResult($event, entry)">
+        {{ entry.volumeInfo.title }}
+      </div>
+      <div
+        *ngIf="isExpanded.indexOf(entry.id) > -1"
+        class="Results-result_details"
+      >
+        <div class="Results-result_details_cell">
+          <h3>Subtitle</h3>
+        </div>
+        <div
+          *ngIf="entry.volumeInfo.subtitle"
+          class="Results-result_details_cell"
+        >
+          {{ entry.volumeInfo.subtitle }}
+        </div>
+        <div
+          *ngIf="!entry.volumeInfo.subtitle"
+          class="Results-result_details_cell"
+        >
+          No Subtitle.
+        </div>
+        <div class="Results-result_details_cell">
+          <h3>Average Rating</h3>
+        </div>
+        <div
+          *ngIf="entry.volumeInfo.averageRating"
+          class="Results-result_details_cell"
+        >
+          {{ entry.volumeInfo.averageRating }}
+        </div>
+        <div
+          *ngIf="!entry.volumeInfo.averageRating"
+          class="Results-result_details_cell"
+        >
+          No Average Rating.
+        </div>
+        <div class="Results-result_details_cell">
+          <h3>Author(s)</h3>
+        </div>
+        <div
+          *ngIf="entry.volumeInfo.authors"
+          class="Results-result_details_cell"
+        >
+          {{ entry.volumeInfo.authors.join(", ") }}
+        </div>
+        <div
+          *ngIf="!entry.volumeInfo.authors"
+          class="Results-result_details_cell"
+        >
+          No Listed Authors.
+        </div>
+        <div class="Results-result_details_cell">
+          <h3>Description</h3>
+        </div>
+        <div
+          *ngIf="entry.volumeInfo.description"
+          class="Results-result_details_cell"
+        >
+          {{ entry.volumeInfo.description }}
+        </div>
+        <div
+          *ngIf="!entry.volumeInfo.description"
+          class="Results-result_details_cell"
+        >
+          No Description.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="entries && entries.length === 0" class="Results-no_results">
+    No Results Found.
+  </div>
+</div>
